@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Case Review</title>
+<style>
+body{margin:0;font-family:Arial;background:#0b1020;color:#fff}
+.container{max-width:700px;margin:auto;padding:20px}
+input,textarea{width:100%;padding:12px;margin:10px 0;border-radius:6px;border:none}
+button{padding:15px;background:#d4af37;border:none;border-radius:8px;font-weight:bold;width:100%}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Free Case Review</h1>
+<p>Tell us about your case and we’ll respond quickly.</p>
+
+<form action="https://formspree.io/f/your-id" method="POST">
+<input type="text" name="name" placeholder="Your Name" required>
+<input type="email" name="email" placeholder="Your Email" required>
+<textarea name="case" placeholder="Describe your case" required></textarea>
+<button type="submit">Submit Case</button>
+</form>
+
+<p style="font-size:12px;opacity:.7">Disclaimer: Submitting this form does not create an attorney-client relationship.</p>
+</div>
+</body>
+</html>
