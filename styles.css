@@ -234,3 +234,37 @@ footer p {
         grid-template-columns: 1fr;
     }
 }
+
+/* ===== INTAKE FORM STYLES ===== */
+.form-group {
+    margin-bottom: 18px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #d4af37;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #3b4b63;
+    border-radius: 8px;
+    background: #0f172a;
+    color: white;
+    font-size: 16px;
+}
+
+textarea {
+    min-height: 140px;
+}
+
+.form-note {
+    font-size: 14px;
+    opacity: 0.8;
+    margin-top: 10px;
+}
