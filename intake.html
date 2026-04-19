@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Free Case Review - Criminal Defense Attorney</title>
+    <title>Free Immigration Consultation - Immigration Attorney</title>
     <link rel="stylesheet" href="styles.css">
     <style>
         body {
@@ -49,7 +49,8 @@
         }
 
         input,
-        textarea {
+        textarea,
+        select {
             width: 100%;
             padding: 12px;
             border: 2px solid #e0e0e0;
@@ -61,7 +62,8 @@
         }
 
         input:focus,
-        textarea:focus {
+        textarea:focus,
+        select:focus {
             outline: none;
             border-color: #d4af37;
             box-shadow: 0 0 5px rgba(212, 175, 55, 0.3);
@@ -74,7 +76,7 @@
 
         button {
             padding: 15px;
-            background: linear-gradient(135deg, #d4af37 0%, #b8941k 100%);
+            background: linear-gradient(135deg, #d4af37 0%, #b8941c 100%);
             color: #16213e;
             border: none;
             border-radius: 50px;
@@ -129,8 +131,8 @@
 </head>
 <body>
     <div class="form-container">
-        <h1>📋 Free Case Review</h1>
-        <p>Tell us about your case and we'll respond quickly with a comprehensive evaluation.</p>
+        <h1>📋 Free Consultation</h1>
+        <p>Tell us about your immigration case and we'll respond quickly with a comprehensive evaluation.</p>
 
         <form action="https://formspree.io/f/meevoldo" method="POST">
             <label for="name">Your Name *</label>
@@ -139,17 +141,31 @@
             <label for="email">Your Email *</label>
             <input type="email" id="email" name="email" placeholder="Email Address" required>
 
-            <label for="phone">Phone Number</label>
-            <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567">
+            <label for="phone">Phone Number *</label>
+            <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567" required>
+
+            <label for="case-type">What is your immigration case about? *</label>
+            <select id="case-type" name="case-type" required>
+                <option value="">-- Select Case Type --</option>
+                <option value="green-card">Green Card Application</option>
+                <option value="spousal-sponsorship">Spousal Sponsorship (K-1 Visa)</option>
+                <option value="expedited-processing">Expedited Processing</option>
+                <option value="deportation-defense">Deportation Defense</option>
+                <option value="daca">DACA Application</option>
+                <option value="tps">Temporary Protected Status (TPS)</option>
+                <option value="naturalization">Naturalization/Citizenship</option>
+                <option value="family-reunification">Family Reunification</option>
+                <option value="other">Other</option>
+            </select>
 
             <label for="case">Describe Your Case *</label>
-            <textarea id="case" name="case" placeholder="Please provide details about your case, charges, and any relevant information..." required></textarea>
+            <textarea id="case" name="case" placeholder="Please provide details about your immigration situation, timeline, and any concerns..." required></textarea>
 
             <button type="submit">Get Your Free Consultation</button>
         </form>
 
         <p class="disclaimer">
-            <strong>Disclaimer:</strong> Submitting this form does not create an attorney-client relationship. This is a confidential consultation request only. Do not include sensitive information you are not comfortable sharing. Attorney Advertising.
+            <strong>Disclaimer:</strong> Submitting this form does not create an attorney-client relationship. This is a confidential consultation request only. Do not include sensitive information such as passport numbers or social security numbers in this form. Our office will contact you within 24 hours to discuss your case.
         </p>
 
         <a href="index.html" class="back-link">← Back to Home</a>
