@@ -3,33 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Intake Form</title>
+    <title>Client Intake - J-Landess Immigration Law</title>
+
+    <!-- SAME CSS AS MAIN PAGE -->
+    <link rel="stylesheet" href="styles.css">
+
     <script>
-        // Function to load preferred language from localStorage
-        function loadLanguage() {
-            const language = localStorage.getItem('preferredLanguage');
-            if (language === 'es') {
-                document.getElementById('formTitle').textContent = 'Formulario de Ingreso';
-                document.getElementById('nameLabel').textContent = 'Nombre';
-                document.getElementById('submitBtn').textContent = 'Enviar';
-                // Add more translations as needed
-            } else {
-                document.getElementById('formTitle').textContent = 'Intake Form';
-                document.getElementById('nameLabel').textContent = 'Name';
-                document.getElementById('submitBtn').textContent = 'Submit';
-                // Add more translations as needed
+        const translations = {
+            en: {
+                formTitle: "📋 Client Intake Form",
+                name: "Full Name",
+                email: "Email",
+                phone: "Phone Number",
+                caseType: "Case Type",
+                details: "Describe Your Situation",
+                submit: "Submit Consultation Request"
+            },
+            es: {
+                formTitle: "📋 Formulario de Cliente",
+                name: "Nombre Completo",
+                email: "Correo Electrónico",
+                phone: "Número de Teléfono",
+                caseType: "Tipo de Caso",
+                details: "Describe Tu Situación",
+                submit: "Enviar Solicitud"
             }
+        };
+
+        function loadLanguage() {
+            const lang = localStorage.getItem('preferredLanguage') || 'en';
+            const t = translations[lang];
+
+            document.getElementById('formTitle').textContent = t.formTitle;
+            document.getElementById('nameLabel').textContent = t.name;
+            document.getElementById('emailLabel').textContent = t.email;
+            document.getElementById('phoneLabel').textContent = t.phone;
+            document.getElementById('caseTypeLabel').textContent = t.caseType;
+            document.getElementById('detailsLabel').textContent = t.details;
+            document.getElementById('submitBtn').textContent = t.submit;
         }
 
-        window.onload = loadLanguage;
+        window.addEventListener('DOMContentLoaded', loadLanguage);
     </script>
 </head>
 <body>
-    <h1 id="formTitle"></h1>
-    <form>
-        <label id="nameLabel" for="name"></label>
-        <input type="text" id="name" name="name" required>
-        <button type="submit" id="submitBtn"></button>
-    </form>
+
+    <!-- SAME LANGUAGE SELECTOR -->
+    <div id="lang-selector">
+        <button onclick="localStorage.setItem('preferredLanguage','en'); location.reload()">English</button>
+        <button onclick="localStorage.setItem('preferredLanguage','es'); location.reload()">Español</button>
+    </div>
+
+    <div class="container">
+
+        <h1 id="formTitle"></h1>
+
+        <div class="card">
+            <form>
+
+                <div class="form-group">
+                    <label id="nameLabel" for="name"></label>
+                    <input type="text" id="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label id="emailLabel" for="email"></label>
+                    <input type="email" id="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label id="phoneLabel" for="phone"></label>
+                    <input type="tel" id="phone">
+                </div>
+
+                <div class="form-group">
+                    <label id="caseTypeLabel" for="caseType"></label>
+                    <select id="caseType">
+                        <option>Green Card</option>
+                        <option>Spousal Visa</option>
+                        <option>Deportation Defense</option>
+                        <option>DACA</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label id="detailsLabel" for="details"></label>
+                    <textarea id="details"></textarea>
+                </div>
+
+                <button type="submit" class="btn" id="submitBtn"></button>
+
+                <p class="form-note">
+                    We will contact you within 24 hours.
+                </p>
+
+            </form>
+        </div>
+
+        <footer>
+            © 2026 J-Landess Immigration Law Group. All rights reserved.
+        </footer>
+
+    </div>
+
 </body>
 </html>
